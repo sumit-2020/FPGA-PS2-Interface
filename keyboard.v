@@ -6,7 +6,7 @@ input data_kb;
 
 output reg [7:0] out_reg;
 
-// Instantaiting and Intializing Registers
+// Instantiating and Intializing Registers
 reg [3:0] counter;
 reg [7:0] data_curr;
 reg [7:0] data_pre;
@@ -39,14 +39,14 @@ begin
 	endcase
 
 	if (counter <= 10)
-		counter <= coutner + 4'h1;
+		counter <= counter + 4'h1;
 	else 
 		counter <= 4'h1;
 end
 
 always @(posedge flag)
 begin
-	if (data_curr = 8'hf0)
+	if (data_curr == 8'hf0)
 		out_reg <= data_pre;
 	else
 		data_pre <= data_curr;
